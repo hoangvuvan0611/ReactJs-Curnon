@@ -69,42 +69,42 @@ function FilterProductsAccessory(props){
                             statusSp &&
                             <div className="SP">
                                 <div className="sp d-flex">
-                                    <div className='product' onClick={() => (typeProductsAccessory("vtnam"), toggleStatusChooseVtmen(true))}>
+                                    <div className='product' onClick={() => {typeProductsAccessory("vtnam"); toggleStatusChooseVtmen(true)}}>
                                         {
                                             statusVtmen && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FCuff_1.png&w=128&q=75)`}}></button>
                                         <div>Vòng tay nam</div>
                                     </div>
-                                    <div className='product' onClick={() => (typeProductsAccessory("vtnam"), toggleStatusChoosePkmen(true))}>
+                                    <div className='product' onClick={() => {typeProductsAccessory("vtnam"); toggleStatusChoosePkmen(true)}}>
                                         {
                                             statusPkmen && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fwatch.5b9e72ca.png&w=128&q=75)`}}></button>
                                         <div>phụ kiện nam</div>
                                     </div>
-                                    <div className='product' onClick={() => (typeProductsAccessory("pknu"), toggleStatusChoosePkwomen(true))}>
+                                    <div className='product' onClick={() => {typeProductsAccessory("pknu"); toggleStatusChoosePkwomen(true)}}>
                                         {
                                             statusPkwomen && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fwatch.5b9e72ca.png&w=128&q=75)`}}></button>
                                         <div>phụ kiện nữ</div>
                                     </div>
-                                    <div className='product' onClick={() => (typeProductsAccessory("vtnu"), toggleStatusChooseVtwomen(true))}>
+                                    <div className='product' onClick={() => {typeProductsAccessory("vtnu"); toggleStatusChooseVtwomen(true)}}>
                                         {
                                             statusVtwomen && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fwatch.5b9e72ca.png&w=128&q=75)`}}></button>
                                         <div>Vòng tay nữ</div>
                                     </div>
-                                    <div className='product' onClick={() => (typeProductsAccessory("vt"), toggleStatusChooseVt(true))}>
+                                    <div className='product' onClick={() => {typeProductsAccessory("vt"); toggleStatusChooseVt(true)}}>
                                         {
                                             statusVt && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fwatch.5b9e72ca.png&w=128&q=75)`}}></button>
                                         <div>Vòng tay</div>
                                     </div>
-                                    <div className='product' onClick={() => (typeProductsAccessory("autumn"), toggleStatusChooseAutu(true))}>
+                                    <div className='product' onClick={() => {typeProductsAccessory("autumn"); toggleStatusChooseAutu(true)}}>
                                         {
                                             statusAutu && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
@@ -128,34 +128,34 @@ function FilterProductsAccessory(props){
                                 <div className="CL">
 
                                     <div className="cl d-flex">
-                                        <div className="color" onClick={() => (toggleStatusChooseSilver(true), typeProductAccessoryColor("silver"))}>
+                                        <div className="color" onClick={() => {toggleStatusChooseSilver(true); typeProductAccessoryColor("silver")}}>
                                             {
                                                 statusSilver && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                             }
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsilver.7ef4c25d.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsilver.7ef4c25d.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Silver</div>
                                         </div>
-                                        <div className="color" onClick={() => (toggleStatusChooseRosegold(true), typeProductAccessoryColor("rosegold"))}>
+                                        <div className="color" onClick={() => {toggleStatusChooseRosegold(true); typeProductAccessoryColor("rosegold")}}>
                                             {
                                                 statusRosegold && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                             }
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Frosegold.1b34d8c5.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Frosegold.1b34d8c5.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Rosegold</div>
                                         </div>
-                                        <div className="color" onClick={() => (toggleStatusChooseBlack(true), typeProductAccessoryColor("black"))}>
+                                        <div className="color" onClick={() => {toggleStatusChooseBlack(true); typeProductAccessoryColor("black")}}>
                                             {
                                                 statusBlack && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                             }
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fblack.abe55f81.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fblack.abe55f81.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Black</div>
                                         </div>
-                                        <div className="color" onClick={() => (toggleStatusChooseWhite(true), typeProductAccessoryColor("white"))}>
+                                        <div className="color" onClick={() => {toggleStatusChooseWhite(true); typeProductAccessoryColor("white")}}>
                                             {
                                                 statusWhite && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                             }
@@ -163,12 +163,12 @@ function FilterProductsAccessory(props){
                                             </div>
                                             <div className="name">White</div>
                                         </div>
-                                        <div className="color" onClick={() => (toggleStatusChooseGrey(true), typeProductAccessoryColor("grey"))}>
+                                        <div className="color" onClick={() => {toggleStatusChooseGrey(true); typeProductAccessoryColor("grey")}}>
                                             {
                                                 statusGrey && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                             }
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fgrey.3ebfa42e.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fgrey.3ebfa42e.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Grey</div>
                                         </div>
@@ -193,19 +193,19 @@ function FilterProductsAccessory(props){
                     {
                         statusSort &&
                             <div className="sortprice">
-                                <div className="default" onClick={() => (toggleSortTop(true), SortProductPriceAccessory("default"))}>
+                                <div className="default" onClick={() => {toggleSortTop(true); SortProductPriceAccessory("default")}}>
                                     <span>Mặc định</span>
                                     {
                                         statusSortTop && <i class="fa-sharp fa-solid fa-check"></i>
                                     }
                                 </div>
-                                <div className="default" onClick={() => (toggleSortCenter(true), SortProductPriceAccessory("increase"))}>
+                                <div className="default" onClick={() => {toggleSortCenter(true); SortProductPriceAccessory("increase")}}>
                                     <span>Giá tăng dần</span>
                                     {
                                         statusSortCenter && <i class="fa-sharp fa-solid fa-check"></i>
                                     }
                                 </div>
-                                <div className="default" onClick={() => (toggleSortBottom(true), SortProductPriceAccessory("reduce"))}>
+                                <div className="default" onClick={() => {toggleSortBottom(true); SortProductPriceAccessory("reduce")}}>
                                     <span>Giá giảm dần</span>
                                     {
                                         statusSortBottom && <i class="fa-sharp fa-solid fa-check"></i>

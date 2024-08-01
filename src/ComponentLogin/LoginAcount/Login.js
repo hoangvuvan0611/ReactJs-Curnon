@@ -1,16 +1,15 @@
 import { connect } from "react-redux";
-import {loginApp} from "../../reduxModule"
+import {loginApp} from "../../reduxModule";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import ContactCurnon from "../../component/ContactCurnon/ContactCurnon";
-import {DataAccount} from "../../reduxModule"
-import { useEffect } from "react";
-import axios from 'axios'
+import {DataAccount} from "../../reduxModule";
+import axios from 'axios';
 import { base, token } from "../../Constants/Config";
-import {GetListDataLogin} from "../../reduxModule"
-import {CountAccount} from "../../reduxModule"
-import {PostDataProduct} from "../../reduxModule"
-import {quantityCarts} from "../../reduxModule"
+import {GetListDataLogin} from "../../reduxModule";
+// import {CountAccount} from "../../reduxModule";
+import {PostDataProduct} from "../../reduxModule";
+import {quantityCarts} from "../../reduxModule";
 
 function ComponentLogin(props){
     let history = useNavigate();
@@ -31,7 +30,7 @@ function ComponentLogin(props){
         }
         axios.post(url, datas, requestConfig)
             .then(res => {
-                if(res.data.status == 'success'){
+                if(res.data.status === 'success'){
                     document.getElementById("name").value = "";
                     document.getElementById("password").value = "";
                     DataAccount(res.data.data.name);
@@ -39,7 +38,7 @@ function ComponentLogin(props){
                     history("/");
                     let test = localStorage.getItem('Data-Account') ? JSON.parse(localStorage.getItem("Data-Account")) : [];
                     let temb = []
-                    test.map((value, index) =>{
+                    test.forEach((value, index) => {
                         temb = {
                             id: index,
                             account: value.account,
@@ -48,7 +47,7 @@ function ComponentLogin(props){
                         GetListDataLogin(temb);
                     });
                     for(let i=0; i<test.length; i++){
-                        if(test[i].account == data.name){
+                        if(test[i].account === data.name){
                             PostDataProduct(test[i].prod);
                             quantityCarts(test[i].qty)
 
@@ -56,7 +55,7 @@ function ComponentLogin(props){
                     }
                         
                 }
-                if(res.data.status == "unauthentication"){
+                if(res.data.status === "unauthentication"){
                     DataAccount("error");
                 }
             });
@@ -65,7 +64,7 @@ function ComponentLogin(props){
         <div>
             <form className="logins" onSubmit={handleSubmit(getAuthentication)}>
                 <NavLink to="/">
-                    <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg"/>
+                    <img src="https://curnonwatch.com/wp-content/uploads/2023/12/logo.svg" alt="logo"/>
                 </NavLink>
                 <div className="box">
                     <div className="login_box">

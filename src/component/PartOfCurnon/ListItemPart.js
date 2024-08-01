@@ -4,7 +4,7 @@ function ListItemPart(props){
 
     return(
         <div>
-            <img src={item.image}/>        
+            <img src={item.image} alt="img"/>        
         </div>
     )
 }

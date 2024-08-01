@@ -8,7 +8,7 @@ function ListProductsAccountPay(props){
 
     return(
         <div className="products d-flex">
-            <img src={product.image}/>
+            <img src={product.image} alt="product"/>
             <div className="introduce">
                 <div className="name">{product.name}</div>
                 <div className="quantity">x{product.quantity}</div>
@@ -22,7 +22,7 @@ function ListProductsAccountPay(props){
                 </div>
                 <div className="box_btn d-flex">
                     <button>Đánh giá</button>
-                    <button onClick={() =>(productCart(product), toggleCart(true))}>Mua lại</button>
+                    <button onClick={() =>{productCart(product); toggleCart(true)}}>Mua lại</button>
                     <button>Liên hệ</button>
                 </div>
             </div>

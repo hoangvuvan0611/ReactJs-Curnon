@@ -11,10 +11,10 @@ function CartItem(props){
     return(
         <div className="bodycart_products d-flex">
             <div className="imageproduct">
-                <button className="iconclose" onClick={() => (deleteCart(products), toggleContentCart(true))}>
+                <button className="iconclose" onClick={() => {deleteCart(products); toggleContentCart(true)}}>
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-                <img src={products.image}/>
+                <img src={products.image} alt="img"/>
             </div>
             <div className="deltalproduct">
                 <div className="name_price d-flex">
@@ -26,7 +26,7 @@ function CartItem(props){
                 <div className="sz_qty d-flex">
                     <div className="size">{products.size}mm</div>
                     <div className="quantity d-flex">
-                        <button className="reduce" onClick={() => (reduceProductCart(products), toggleContentCart(true))}>
+                        <button className="reduce" onClick={() => {reduceProductCart(products); toggleContentCart(true)}}>
                             <i class="fa-solid fa-minus"></i>
                         </button>
                         <div className="qty">Qty: {products.quantity}</div>

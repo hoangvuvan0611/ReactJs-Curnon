@@ -13,8 +13,8 @@ function ListMenProducts(props){
     return(
         <div className="bestseller_productsChild">
             <div className="bestseller_productsChildImg">
-                <img src={products.image}/>
-                <div className="bestseller_productsChildImg_btn" onClick={() => (toggleCart(true), toggleBackground(true), toggleContentCart(false))}>
+                <img src={products.image} alt="img"/>
+                <div className="bestseller_productsChildImg_btn" onClick={() => {toggleCart(true); toggleBackground(true); toggleContentCart(false)}}>
                     <button onClick={() => productCart(products)}>thêm vào giỏ</button>
                 </div>
                 <div className="bestseller_productsChildImg_saleof">-{products.saleof}%</div>

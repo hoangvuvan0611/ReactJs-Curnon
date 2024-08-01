@@ -1,7 +1,6 @@
 import Wrapper from "../component/listProductWrapper/Wrapper";
 import {connect} from "react-redux"
 import Cart from "../component/Cart/Cart";
-import PartOfCurnon from "../component/PartOfCurnon/PartOfCurnon";
 import ContactCurnon from "../component/ContactCurnon/ContactCurnon";
 import ListProductsAccountPay from "./ListProductsAccountPay";
 

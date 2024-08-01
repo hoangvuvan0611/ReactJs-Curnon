@@ -5,7 +5,7 @@ function ListWrapperWomen(props){
     return(
         <div className='product col-2'>
             <button>
-                <img src={ProductsWapperWomen.image}/>
+                <img src={ProductsWapperWomen.image} alt="img"/>
             </button>
             <div>{ProductsWapperWomen.name}</div>
         </div>

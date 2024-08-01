@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { base, token } from "../Constants/Config";
 import ContactCurnon from "../component/ContactCurnon/ContactCurnon";
 import {RegisterAccount} from "../reduxModule";
-import {AccountUser} from "../reduxModule"
-import { render } from "react-dom";
+// import {AccountUser} from "../reduxModule"
+// import { render } from "react-dom";
 
 function ComponentRegister(props){
 
@@ -17,7 +17,7 @@ function ComponentRegister(props){
     const StatusSubmitAccount = (data) => {
         if(data.name.length > 5){
             if(data.password.length > 7){
-                if(data.password == data.nhaplai){
+                if(data.password === data.nhaplai){
                     Componentsignin(data);
                     document.getElementById("name").value = "";
                     document.getElementById("nlmk").value = "";
@@ -58,10 +58,10 @@ function ComponentRegister(props){
         }
         axios.post(url, datas, requestConfig)
         .then(res => {
-            if(res.data.status == 'badrequest'){
+            if(res.data.status === 'badrequest'){
                 RegisterAccount("badrequest");
             }
-            if(res.data.status == 'success'){
+            if(res.data.status ==='success'){
                 alert("Tạo tài khoản thành công!");
                 RegisterAccount("success");
                 //Đẩy dữ liệu nên localStorage
@@ -77,12 +77,11 @@ function ComponentRegister(props){
         })
     }
 
-
     return(
         <div>
             <div className="logins">
                 <NavLink to="/">
-                    <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg"/>
+                    <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg" alt="logo"/>
                 </NavLink>
                 <form className="box" onSubmit={handleSubmit(StatusSubmitAccount)}>
                     <div className="login_box">

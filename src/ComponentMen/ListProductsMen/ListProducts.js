@@ -4,9 +4,9 @@ import {toggleBackground} from "../../reduxModule"
 import {toggleContentCart} from "../../reduxModule"
 import {productCart} from "../../reduxModule"
 import {toggleSaleof} from "../../reduxModule"
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
-function ListProducts(props){
+function ListProducts(props) {
 
     let {products} = props
     let {toggleCart, toggleBackground, toggleContentCart, productCart} = props
@@ -14,13 +14,12 @@ function ListProducts(props){
     return(
         <div className="bestseller_productsChild col-3">
             <div className="bestseller_productsChildImg">
-                <img src={products.image}/>
-                <div className="bestseller_productsChildImg_btn" onClick={() => (toggleCart(true), toggleBackground(true), toggleContentCart(false))}>
+                <img src={products.image} alt="img"/>
+                <div className="bestseller_productsChildImg_btn" onClick={() => {toggleCart(true); toggleBackground(true); toggleContentCart(false)}}>
                     <button onClick={() => productCart(products)}>thêm vào giỏ</button>
                 </div>
                 {
-                    statussaleof &&
-                        <div className="bestseller_productsChildImg_saleof">-{products.saleof}%</div>
+                    statussaleof && <div className="bestseller_productsChildImg_saleof">-{products.saleof}%</div>
                 }
             </div>
             <div className="bestseller_productsChildType">

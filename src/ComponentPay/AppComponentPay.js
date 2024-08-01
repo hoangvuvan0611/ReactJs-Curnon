@@ -1,5 +1,5 @@
-import {Link, NavLink} from 'react-router-dom' 
-import { useEffect } from 'react';
+import {NavLink} from 'react-router-dom' 
+import {useEffect } from 'react';
 import {connect} from "react-redux";
 import ProductPay from "./ProductPay";
 import {toggleStatusSet} from "../reduxModule";
@@ -33,7 +33,7 @@ function AppComponentPay(props){
             }
             
         }
-        else if(totalPrice == 0){
+        else if(totalPrice === 0){
             return()=>{
                 quantityCarts(totalQuantity);
                 toggleStatusCheckOutRight(false);
@@ -46,7 +46,7 @@ function AppComponentPay(props){
         let test = localStorage.getItem('Data-Account') ? JSON.parse(localStorage.getItem("Data-Account")) : [];
         let accountUser = accountuser;
         for(let i=0; i<test.length; i++){
-            if(test[i].account == accountUser){ 
+            if(test[i].account === accountUser){ 
                 for(let j= 0; j<product.length; j++){
                     test[i].prodPay = [...test[i].prodPay, product[j]];
                     postProductsPay([...test[i].prodPay, product[j]]);
@@ -61,7 +61,7 @@ function AppComponentPay(props){
             <div className="checkout_leftbox col-6">
                 <div className="checkout_leftbox_logo">
                     <NavLink to="/">
-                        <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg"/>
+                        <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg" alt='logo'/>
                     </NavLink>
                 </div>
                 <div className="checkout_leftbox_title">thông tin khách hàng</div>
@@ -101,7 +101,7 @@ function AppComponentPay(props){
                     *Phương thức vận chuyển là <span>freeship</span> với đơn hàng từ 700.000đ
                 </div>
                 <div className="checkout_leftbox_btn">
-                    <button onClick={() => (postProductsPay(), PostDataProducts())}>thanh toán <i class="fa-solid fa-arrow-right"></i></button>
+                    <button onClick={() => {postProductsPay(); PostDataProducts()}}>thanh toán <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div className="checkout_leftbox_end">
                     <div>© 2021 - Bản quyền của CTCP PHÁT TRIỂN SẢN PHẨM SÁNG TẠO VIỆT</div>
@@ -166,7 +166,7 @@ function AppComponentPay(props){
                     !statusCheckOutRight &&
                         <div className='emptyPay'>
                             <NavLink to="/">
-                                <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg"/>
+                                <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg" alt='logo'/>
                             </NavLink>
                             <div className='emptyPay_content'>Giỏ hàng của bạn trống</div>
                             <NavLink to="/">

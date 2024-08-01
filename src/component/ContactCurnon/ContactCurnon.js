@@ -33,27 +33,27 @@ function ContactCurnon(){
                     <div className="contactcurnon_contact_phonenumber">0868889103</div>
                     <div className="contactcurnon_contact_icon d-flex">
                         <div className="icon">
-                            <img src="https://curnonwatch.com/_next/static/media/icon_fb.ba9f5d29.svg"/>
+                            <img src="https://curnonwatch.com/_next/static/media/icon_fb.ba9f5d29.svg" alt="img"/>
                         </div>
                         <div className="icon">
-                            <img src="https://curnonwatch.com/_next/static/media/icon_insta.9353e397.svg"/>
+                            <img src="https://curnonwatch.com/_next/static/media/icon_insta.9353e397.svg" alt="img"/>
                         </div>
                         <div className="icon">
-                            <img src="https://curnonwatch.com/_next/static/media/icon_fb.ba9f5d29.svg"/>
+                            <img src="https://curnonwatch.com/_next/static/media/icon_fb.ba9f5d29.svg" alt="img"/>
                         </div>
                     </div>
                     <div className="contactcurnon_contact_pay d-flex">
                         <div className="">
-                            <img src="https://curnonwatch.com/_next/static/media/cod.10bcbd91.png"/>
+                            <img src="https://curnonwatch.com/_next/static/media/cod.10bcbd91.png" alt="img"/>
                         </div>
                         <div className="">
-                            <img src="https://curnonwatch.com/_next/static/media/fundiin.34ef01d3.png"/>
+                            <img src="https://curnonwatch.com/_next/static/media/fundiin.34ef01d3.png" alt="img"/>
                         </div>
                         <div className="">
-                            <img src="https://curnonwatch.com/_next/static/media/momo.1a8e86d8.png"/>
+                            <img src="https://curnonwatch.com/_next/static/media/momo.1a8e86d8.png" alt="img"/>
                         </div>
                         <div className="">
-                            <img src="https://curnonwatch.com/_next/static/media/vnpay.3fa45c06.png"/>
+                            <img src="https://curnonwatch.com/_next/static/media/vnpay.3fa45c06.png" alt="img"/>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ function ContactCurnon(){
                     <div className="certification">Giấy chứng nhận ĐKKD số 0108150321 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp ngày 29/01/2018 123C Thụy Khuê, Tây Hồ, Hà Nội</div>
                 </div>
                 <div className="contactcurnon_certification-right">
-                    <img src="https://curnonwatch.com/_next/static/media/certificate.e07e4993.png"/>
+                    <img src="https://curnonwatch.com/_next/static/media/certificate.e07e4993.png" alt="img"/>
                 </div>
             </div>
         </div>

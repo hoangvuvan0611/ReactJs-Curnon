@@ -8,7 +8,7 @@ import {toggleAlbert} from '../../reduxModule'
 import {toggleSearch} from '../../reduxModule'
 import {toggleCart} from '../../reduxModule'
 import {toggleBackground} from "../../reduxModule"
-import {Link, NavLink} from 'react-router-dom' 
+import {NavLink} from 'react-router-dom' 
 //women
 import {toggleSp} from "../../reduxModule"
 import {toggleSz} from "../../reduxModule"
@@ -47,7 +47,7 @@ function Wrapper(props){
         let test = localStorage.getItem('Data-Account') ? JSON.parse(localStorage.getItem("Data-Account")) : [];
         let accountUser = accountuser;
         for(let i=0; i<test.length; i++){
-            if(test[i].account == accountUser){
+            if(test[i].account === accountUser){
                 test[i].prod = product;
                 test[i].qty = quantitycart;
             }
@@ -59,20 +59,12 @@ function Wrapper(props){
         <div>
             <div className ="wrapper d-flex">
                 <div className="wrapper_left d-flex">
-                <button onMouseMove={() => (toggleCart(false), 
-                        toggleBackground(true),
-                        toggleSp(false), 
-                        toggleSz(false), 
-                        toggleCl(false), 
-                        toggleCld(false),
-                        toggleCart(false),
-                        toggleSort(false) 
-                        )} 
+                <button onMouseMove={() => {toggleCart(false); toggleBackground(true); toggleSp(false); toggleSz(false); toggleCl(false); toggleCld(false); toggleCart(false); toggleSort(false)}} 
                         className='boxMen' onMouseLeave={() => toggleBackground(false)}>
                     <span onMouseMove={()=>toggleSearch(false)} onMouseEnter={() => toggleMenumen(true)} onMouseMoveCapture={() => toggleAccessory(false)} onMouseOver={() => toggleAlbert(false)}>
                         nam giới
                         <div className='boxMen_pointer'>
-                            <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg'/>
+                            <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg' alt='img'/>
                         </div>
                     </span>
                     <div className='boxMen_deltail'> 
@@ -103,7 +95,7 @@ function Wrapper(props){
                                 statusAccessory &&
                                     <div className='boxMen_accessory d-flex'>
                                         <div className='left'>
-                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FCuff_1.png&w=128&q=75'/>
+                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FCuff_1.png&w=128&q=75' alt='img'/>
                                         </div>
                                         <div className='right'>
                                             <NavLink to="/phu-kien-dong-ho">
@@ -119,7 +111,7 @@ function Wrapper(props){
                                 statusAlbert &&
                                     <div className='boxMen_albert d-flex'>
                                         <div className='boxMen_albert-left'>
-                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2F3_ebc2dc50c4.jpeg&w=384&q=75'/>
+                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2F3_ebc2dc50c4.jpeg&w=384&q=75' alt='img'/>
                                         </div>
                                         <div className='boxMen_albert-right '>
                                             <div className='content'>
@@ -135,13 +127,13 @@ function Wrapper(props){
                         {/* <div className='blackhole'></div> */}
                     </div>
                 </button>
-                <button onMouseMove={() => (toggleCart(false), toggleBackground(true),toggleSp(false), toggleSz(false), toggleCl(false), toggleCld(false),toggleCart(false), toggleSort(false) )} 
+                <button onMouseMove={() => {toggleCart(false); toggleBackground(true); toggleSp(false); toggleSz(false); toggleCl(false); toggleCld(false); toggleCart(false); toggleSort(false)}} 
                                             className='boxWomen' 
                                             onMouseLeave={() => toggleBackground(false)}>
                     <span onMouseMove={()=>toggleSearch(false)}>
                         Nữ giới
                         <div className='boxWomen_pointer'>
-                            <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg'/>
+                            <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg' alt='img'/>
                         </div>
                     </span>
                     <div className='boxWomen_deltail'>
@@ -172,7 +164,7 @@ function Wrapper(props){
                                 statusAccessory &&
                                     <div className='boxWomen_accessory d-flex'>
                                         <div className='boxWomen_accessory-left'>
-                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2FFemale_Cuffs_6f19de41b6.jpg&w=384&q=75'/>
+                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2FFemale_Cuffs_6f19de41b6.jpg&w=384&q=75' alt='img'/>
                                         </div>
                                         <div className='boxWomen_accessory-right '>
                                             <div className='content'>
@@ -188,7 +180,7 @@ function Wrapper(props){
                                 statusAlbert &&
                                     <div className='boxWomen_albert d-flex'>
                                         <div className='boxWomen_albert-left'>
-                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2F2_1_85f9086d78.jpg&w=384&q=75'/>
+                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2F2_1_85f9086d78.jpg&w=384&q=75' alt='img'/>
                                         </div>
                                         <div className='boxWomen_albert-right '>
                                             <div className='content'>
@@ -204,13 +196,13 @@ function Wrapper(props){
                         {/* <div className='blackhole'></div> */}
                     </div>
                 </button>
-                <button onMouseMove={() => (toggleCart(false),toggleBackground(true),toggleSp(false), toggleSz(false), toggleCl(false), toggleCld(false),toggleCart(false), toggleSort(false) )} 
-                                            onMouseLeave={() => toggleBackground(false)} 
-                                            className='boxCurnon'>
+                <button onMouseMove={() => {toggleCart(false); toggleBackground(true); toggleSp(false); toggleSz(false); toggleCl(false); toggleCld(false); toggleCart(false); toggleSort(false)}} 
+                        onMouseLeave={() => toggleBackground(false)} 
+                        className='boxCurnon'>
                     <span onMouseMove={()=>toggleSearch(false)}>
                         về curnon
                         <div className='boxCurnon_pointer'>
-                            <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg'/>
+                            <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg' alt='img'/>
                         </div>
                     </span>
                     <div className='boxCurnon_deltail'>
@@ -222,21 +214,13 @@ function Wrapper(props){
                 </div>
                 <NavLink to="/">
                     <div className='wrapper_logo' onClick={() => toggleBackground(false)}>
-                        <img src='https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg'/>
+                        <img src='https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg' alt='img'/>
                     </div>            
                 </NavLink>
                 <div className='wrapper_right d-flex'>
                     <button onClickCapture={()=>toggleSearch(false)} 
-                            onClick={() => (
-                                toggleCart(true), 
-                                toggleBackground(true),
-                                toggleSp(false), 
-                                toggleSz(false), 
-                                toggleCl(false), 
-                                toggleCld(false),
-                                // toggleCart(false),
-                                toggleSort(false) 
-                                )} >
+                            onClick={() => {toggleCart(true); toggleBackground(true); toggleSp(false); toggleSz(false); toggleCl(false); toggleCld(false); toggleSort(false) }
+                    }>
                         {
                             statusquantitycart && <button className='btn_quantityCart'>{quantitycart}</button>
                         }
@@ -244,7 +228,7 @@ function Wrapper(props){
                         <i className="fa-sharp fa-solid fa-bag-shopping"></i>
                     </button>
                     <button className='btn-Search'>
-                        <i onClick={() => (toggleSearch(true), toggleBackground(true))}  className='fa-solid fa-magnifying-glass'></i>
+                        <i onClick={() => {toggleSearch(true); toggleBackground(true)}}  className='fa-solid fa-magnifying-glass'></i>
                         {
                             statusSearch &&
                                 <div className='Search'>
@@ -260,7 +244,7 @@ function Wrapper(props){
                                             <div>mykonos</div>
                                             <div>jackie cuff</div>
                                         </div>
-                                        <div onClick={() => (toggleSearch(false), toggleBackground(false))} className='close'>
+                                        <div onClick={() => {toggleSearch(false); toggleBackground(false)}} className='close'>
                                             đóng
                                         </div>
                                     </div>
@@ -276,16 +260,16 @@ function Wrapper(props){
                     {
                         statusLogin &&
                         <button className='btn_user'>   
-                             <i class="fa-sharp fa-solid fa-user" onClick={() =>(StatusBoxUser(true), toggleBackground(true))}></i>
+                             <i class="fa-sharp fa-solid fa-user" onClick={() => {StatusBoxUser(true); toggleBackground(true)}}></i>
                             {
                                 boxUser &&
                                     <div className='btn_user_box'>
                                         <ul>
                                             <NavLink to="/account-profile">
-                                                <li onClick={() => (StatusBoxUser(false), toggleBackground(false))}><button>Tài khoản</button></li>
+                                                <li onClick={() => {StatusBoxUser(false); toggleBackground(false)}}><button>Tài khoản</button></li>
                                             </NavLink>
-                                            <li onClick={() =>(toggleCart(true), StatusBoxUser(false), toggleBackground(false))}>Đơn mua</li>
-                                            <li onClick={() => (toggleLogOutUser(false),toggleBackground(false), StatusBoxUser(false), quantityCarts(0), PostDataProducts())}>Đăng xuất</li>
+                                            <li onClick={() => {toggleCart(true); StatusBoxUser(false); toggleBackground(false)}}>Đơn mua</li>
+                                            <li onClick={() => {toggleLogOutUser(false); toggleBackground(false); StatusBoxUser(false); quantityCarts(0); PostDataProducts()}}>Đăng xuất</li>
                                         </ul>
                                     </div>
                             }
@@ -295,18 +279,8 @@ function Wrapper(props){
             </div>
             {
                 statusBackground && 
-                    <div className='background' onClick={() => 
-                        (
-                            toggleBackground(false), 
-                            toggleSp(false), 
-                            toggleSz(false), 
-                            toggleCl(false), 
-                            toggleCld(false),
-                            toggleCart(false),
-                            toggleSort(false),
-                            toggleSearch(false),
-                            StatusBoxUser(false)
-                        )}></div>
+                <div className = 'background' onClick = {() => {toggleBackground(false); toggleSp(false); toggleSz(false); toggleCl(false); toggleCld(false); toggleCart(false); toggleSort(false); toggleSearch(false); StatusBoxUser(false)}}>
+                </div>
             }
         </div>
     )

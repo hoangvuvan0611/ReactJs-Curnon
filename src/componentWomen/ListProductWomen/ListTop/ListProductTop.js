@@ -11,8 +11,8 @@ function ListProductTop(props){
     return(
         <div className="bestseller_productsChild col-3">
             <div className="bestseller_productsChildImg">
-                <img src={products.image}/>
-                <div className="bestseller_productsChildImg_btn" onClick={() => (toggleCart(true), toggleBackground(true), toggleContentCart(false))}>
+                <img src={products.image} alt="img"/>
+                <div className="bestseller_productsChildImg_btn" onClick={() => {toggleCart(true); toggleBackground(true); toggleContentCart(false)}}>
                     <button onClick={() => productCart(products)}>thêm vào giỏ</button>
                 </div>
             </div>

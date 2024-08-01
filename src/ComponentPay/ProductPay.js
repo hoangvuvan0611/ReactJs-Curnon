@@ -24,12 +24,12 @@ function ProductPay(props){
             <div className="left d-flex">
                 {
                     statusSetProduct &&
-                        <button className="remove" onClick={() => (deleteCart(products), toggleStatusCheckOutRight(false), productCart("0"))}>
+                        <button className="remove" onClick={() => {deleteCart(products); toggleStatusCheckOutRight(false); productCart("0")}}>
                             <i class="fa-sharp fa-solid fa-xmark"></i>
                         </button>
                 }
                 <div className="img">
-                    <img src={products.image}/>
+                    <img src={products.image} alt="img"/>
                 </div>
                 <div className="introduce">
                     <div className="name">{products.name}</div>
@@ -37,7 +37,7 @@ function ProductPay(props){
                     <div className="quantity d-flex">
                         {
                             statusSetProduct &&
-                                <button className="reduce" onClick={() => (reduceProductCart(products), toggleStatusCheckOutRight(false), productCart(0))}>
+                                <button className="reduce" onClick={() => {reduceProductCart(products); toggleStatusCheckOutRight(false); productCart(0)}}>
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
                         }

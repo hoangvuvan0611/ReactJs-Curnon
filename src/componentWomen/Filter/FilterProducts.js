@@ -66,28 +66,28 @@ function FilterProducts(props){
                             statusSp &&
                             <div className="SP">
                                 <div className="sp col-7 d-flex">
-                                    <div className='product' onClick={() => (typeProductSpWomen("hamilton"), toggleStatusChooseHam(true))}>
+                                    <div className='product' onClick={() => {typeProductSpWomen("hamilton"); toggleStatusChooseHam(true)}}>
                                         {
                                             statusHam && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FHamilton.png&w=128&q=75)`}}></button>
                                         <div>hamilton</div>
                                     </div>
-                                    <div className='product' onClick={() =>(typeProductSpWomen("melissani"), toggleStatusChooseMel(true))}>
+                                    <div className='product' onClick={() => {typeProductSpWomen("melissani"); toggleStatusChooseMel(true)}}>
                                         {
                                             statusMel && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FMelis.png&w=128&q=75)`}}></button>
                                         <div>melissani</div>
                                     </div>
-                                    <div className='product' onClick={() => (typeProductSpWomen("moraine"), toggleStatusChooseMor(true))}>
+                                    <div className='product' onClick={() => {typeProductSpWomen("moraine"); toggleStatusChooseMor(true)}}>
                                         {
                                             statusMor && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FMoraine.png&w=128&q=75)`}}></button>
                                         <div>moraine</div>
                                     </div>
-                                    <div className='product' onClick={() => (typeProductSpWomen("santorini"), toggleStatusChooseSan(true))}>
+                                    <div className='product' onClick={() => {typeProductSpWomen("santorini"); toggleStatusChooseSan(true)}}>
                                         {
                                             statusSan &&<i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
@@ -110,21 +110,21 @@ function FilterProducts(props){
                             statusSz &&
                             <div className="SZ">
                                 <div className="sz d-flex">
-                                    <div className="icon" onClick={() => (filterSize(28), togglestatusChooseSizeProducts28(true))}>
+                                    <div className="icon" onClick={() => {filterSize(28); togglestatusChooseSizeProducts28(true)}}>
                                         {
                                             status28 && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button>28</button>
                                         <div>28mm</div>
                                     </div>
-                                    <div className="icon" onClick={() => (filterSize(32), togglestatusChooseSizeProducts32(true))}>
+                                    <div className="icon" onClick={() => {filterSize(32); togglestatusChooseSizeProducts32(true)}}>
                                         {
                                             status32 && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button>32</button>
                                         <div>32mm</div>
                                     </div>
-                                    <div className="icon" onClick={() => (filterSize(24), togglestatusChooseSizeProducts24(true))}>
+                                    <div className="icon" onClick={() => {filterSize(24); togglestatusChooseSizeProducts24(true)}}>
                                         {
                                             status24 && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
@@ -149,19 +149,19 @@ function FilterProducts(props){
                                     <div className="cl d-flex">
                                         <div className="color" onClick={() => filterChooseColor("silver")}>
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsilver.7ef4c25d.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsilver.7ef4c25d.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Silver</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Frosegold.1b34d8c5.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Frosegold.1b34d8c5.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Rosegold</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fblack.abe55f81.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fblack.abe55f81.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Black</div>
                                         </div>
@@ -172,13 +172,13 @@ function FilterProducts(props){
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fnavy.1d1910f2.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fnavy.1d1910f2.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Navy</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fbrown.c4914078.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fbrown.c4914078.png&w=48&q=75" alt="img"/>
                                             </div>
                                             <div className="name">Brown</div>
                                         </div>
@@ -235,19 +235,19 @@ function FilterProducts(props){
                     {
                         statusSort &&
                             <div className="sortprice">
-                                <div className="default" onClick={() => (toggleSortTop(true), SortProductPrice("default"))}>
+                                <div className="default" onClick={() => {toggleSortTop(true); SortProductPrice("default")}}>
                                     <span>Mặc định</span>
                                     {
                                         statusSortTop && <i class="fa-sharp fa-solid fa-check"></i>
                                     }
                                 </div>
-                                <div className="default" onClick={() => (toggleSortCenter(true), SortProductPrice("increase"))}>
+                                <div className="default" onClick={() => {toggleSortCenter(true); SortProductPrice("increase")}}>
                                     <span>Giá tăng dần</span>
                                     {
                                         statusSortCenter && <i class="fa-sharp fa-solid fa-check"></i>
                                     }
                                 </div>
-                                <div className="default" onClick={() => (toggleSortBottom(true), SortProductPrice("reduce"))} >
+                                <div className="default" onClick={() => {toggleSortBottom(true); SortProductPrice("reduce")}} >
                                     <span>Giá giảm dần</span>
                                     {
                                         statusSortBottom && <i class="fa-sharp fa-solid fa-check"></i>

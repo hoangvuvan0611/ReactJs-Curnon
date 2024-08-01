@@ -1,4 +1,4 @@
-import {Link, NavLink} from 'react-router-dom'; 
+import {NavLink} from 'react-router-dom'; 
 import {connect} from "react-redux";
 import { useEffect } from "react";
 import {toggleCart} from "../../reduxModule";
@@ -26,7 +26,7 @@ function Cart(props){
                 toggleContentCart(false);
             }
         }
-        else if(totalPrice == 0){
+        else if(totalPrice === 0){
             return()=>{
                 quantityCarts(totalQuantity);
                 toggleContentCart(true);
@@ -46,13 +46,13 @@ function Cart(props){
             {
                 StatusCart &&
                     <div className="cart_item d-flex">
-                            <div onClick={() => (toggleCart(false), toggleBackground(false))} className="cart-left"></div>
+                            <div onClick={() => {toggleCart(false); toggleBackground(false)}} className="cart-left"></div>
                             <div className='cart-right'>
                                 <div className='cart_wrapper d-flex'>
                                     <div className='cart_wrapperTitle'>
                                         Giỏ Hàng của bạn
                                     </div>
-                                    <div onClick={() => (toggleCart(false), toggleBackground(false))} className='cart_wrapperIcon'>
+                                    <div onClick={() => {toggleCart(false); toggleBackground(false)}} className='cart_wrapperIcon'>
                                         <i  class="fa-sharp fa-solid fa-xmark"></i>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@ function Cart(props){
                                             <button className="content" >
                                                 Hiện tại chưa có sản phẩm nào trong giỏ hàng của bạn
                                             </button>
-                                            <button onClick={() => (toggleCart(false), toggleBackground(false))} className="btn_sell d-flex">
+                                            <button onClick={() => {toggleCart(false); toggleBackground(false)}} className="btn_sell d-flex">
                                                 <div className="btn_sellContent">Mua hàng ngay</div>
                                                 <div className="btn_sellIcon">
                                                     <i class="fa-sharp fa-solid fa-arrow-right"></i>
@@ -84,7 +84,7 @@ function Cart(props){
                                 </div>
                                 {
                                     !statusContent &&
-                                        <div className="endcart" onClick={() => (toggleCart(false), toggleBackground(false))}>
+                                        <div className="endcart" onClick={() => {toggleCart(false); toggleBackground(false)}}>
                                             <div className="endcart_pay d-flex">
                                                 <div className="left">Thành tiền:</div>
                                                 <div className="right">{totalPrice} <span>đ</span></div>

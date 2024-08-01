@@ -29,7 +29,7 @@ import {toggleResetFilterProductMen} from "../../reduxModule";
 import {SortProductPriceMen} from "../../reduxModule";
 function FilterProductsMen(props){
 
-    let {toggleBackground, statusSp, toggleSp, statusSz, toggleSz, statusCl, toggleCl, statusCld, toggleCld} = props
+    let {statusSp, toggleSp, statusSz, toggleSz, statusCl, toggleCl, statusCld, toggleCld} = props
 
     let {statusSortTop, toggleSortTop, statusSortCenter, toggleSortCenter, statusSortBottom, toggleSortBottom, statusSort, toggleSort} = props;
     
@@ -44,6 +44,7 @@ function FilterProductsMen(props){
     let {toggleResetFilterProductMen} = props;
     //countProducts
     let {count} = props;
+
     return(
         <div className="filterproducts">
             <div className="filterproducts_title">đồng hồ nam</div>
@@ -74,49 +75,49 @@ function FilterProductsMen(props){
                             statusSp &&
                             <div className="SP">
                                 <div className="sp d-flex">
-                                    <div className='product' onClick={() =>(typeProductsMen("colosseum"), toggleStatusChooseCol(true))}>
+                                    <div className='product' onClick={() => {typeProductsMen("colosseum"); toggleStatusChooseCol(true)}}>
                                         {
                                             statusCol && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FColosseum.png&w=128&q=75)`}}></button>
                                         <div>colosseum</div>
                                     </div>
-                                    <div className='product' onClick={() =>(typeProductsMen("kashmir"), toggleStatusChooseKas(true))}>
+                                    <div className='product' onClick={() => {typeProductsMen("kashmir"); toggleStatusChooseKas(true)}}>
                                         {
                                             statusKas && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FKashmir.png&w=128&q=75)`}}></button>
                                         <div>kashmir</div>
                                     </div>
-                                    <div className='product' onClick={() =>(typeProductsMen("weimar"), toggleStatusChooseWei(true))}>
+                                    <div className='product' onClick={() => {typeProductsMen("weimar"); toggleStatusChooseWei(true)}}>
                                         {
                                             statusWei && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FWeimar.png&w=128&q=75)`}}></button>
                                         <div>weimar</div>
                                     </div>
-                                    <div className='product' onClick={() =>(typeProductsMen("jackson"), toggleStatusChooseJac(true))}>
+                                    <div className='product' onClick={() => {typeProductsMen("jackson"); toggleStatusChooseJac(true)}}>
                                         {
                                             statusJac && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FJackson.png&w=128&q=75)`}}></button>
                                         <div>jackson</div>
                                     </div>
-                                    <div className='product' onClick={() =>(typeProductsMen("dettroit"), toggleStatusChooseDet(true))}>
+                                    <div className='product' onClick={() => {typeProductsMen("dettroit"); toggleStatusChooseDet(true)}}>
                                         {
                                             statusDet && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FDetroit_1.png&w=128&q=75)`}}></button>
                                         <div>dettroit</div>
                                     </div>
-                                    <div className='product' onClick={() =>(typeProductsMen("futura"), toggleStatusChooseFut(true))}>
+                                    <div className='product' onClick={() => {typeProductsMen("futura"); toggleStatusChooseFut(true)}}>
                                         {
                                             statusFut && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button style={{backgroundImage: `url(https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fshop.curnonwatch.com%2Fmedia%2Fcatalog%2Fcategory%2FFutura.png&w=128&q=75)`}}></button>
                                         <div>futura</div>
                                     </div>
-                                    <div className='product' onClick={() =>(typeProductsMen("whitesands"), toggleStatusChooseWhi(true))}>
+                                    <div className='product' onClick={() => {typeProductsMen("whitesands"); toggleStatusChooseWhi(true)}}>
                                         {
                                             statusWhi && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
@@ -139,21 +140,21 @@ function FilterProductsMen(props){
                             statusSz &&
                             <div className="SZ">
                                 <div className="sz d-flex">
-                                    <div className="icon" onClick={() => (filterSizeMen(40), togglestatusChooseSizeProducts40(true))}>
+                                    <div className="icon" onClick={() => {filterSizeMen(40); togglestatusChooseSizeProducts40(true)}}>
                                         {
                                             status40 && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button>40</button>
                                         <div>40mm</div>
                                     </div>
-                                    <div className="icon" onClick={() => (filterSizeMen(42), togglestatusChooseSizeProducts42(true))}>
+                                    <div className="icon" onClick={() => {filterSizeMen(42); togglestatusChooseSizeProducts42(true)}}>
                                         {
                                             status42 && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
                                         <button>42</button>
                                         <div>42mm</div>
                                     </div>
-                                    <div className="icon" onClick={() => (filterSizeMen(38), togglestatusChooseSizeProducts38(true))}>
+                                    <div className="icon" onClick={() => {filterSizeMen(38); togglestatusChooseSizeProducts38(true)}}>
                                         {
                                             status38 && <i class="fa-sharp fa-solid fa-caret-down"></i>
                                         }
@@ -179,19 +180,19 @@ function FilterProductsMen(props){
                                     <div className="cl d-flex">
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsilver.7ef4c25d.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsilver.7ef4c25d.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Silver</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Frosegold.1b34d8c5.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Frosegold.1b34d8c5.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Rosegold</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fblack.abe55f81.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fblack.abe55f81.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Black</div>
                                         </div>
@@ -202,31 +203,31 @@ function FilterProductsMen(props){
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fnavy.1d1910f2.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fnavy.1d1910f2.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Navy</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fgrey.3ebfa42e.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fgrey.3ebfa42e.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Grey</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fbrown.c4914078.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fbrown.c4914078.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Brown</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fgrey.3ebfa42e.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fgrey.3ebfa42e.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Coffee</div>
                                         </div>
                                         <div className="color">
                                             <div className="boderimg">
-                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsand.661604f3.png&w=48&q=75"/>
+                                                <img src="https://curnonwatch.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsand.661604f3.png&w=48&q=75" alt="product men"/>
                                             </div>
                                             <div className="name">Sand</div>
                                         </div>
@@ -291,19 +292,19 @@ function FilterProductsMen(props){
                     {
                         statusSort &&
                             <div className="sortprice">
-                                <div className="default" onClick={() => (toggleSortTop(true), SortProductPriceMen("default"))}>
+                                <div className="default" onClick={() => {toggleSortTop(true); SortProductPriceMen("default")}}>
                                     <span>Mặc định</span>
                                     {
                                         statusSortTop && <i class="fa-sharp fa-solid fa-check"></i>
                                     }
                                 </div>
-                                <div className="default" onClick={() => (toggleSortCenter(true), SortProductPriceMen("increase"))}>
+                                <div className="default" onClick={() => {toggleSortCenter(true); SortProductPriceMen("increase")}}>
                                     <span>Giá tăng dần</span>
                                     {
                                         statusSortCenter && <i class="fa-sharp fa-solid fa-check"></i>
                                     }
                                 </div>
-                                <div className="default" onClick={() => (toggleSortBottom(true), SortProductPriceMen("reduce")) } >
+                                <div className="default" onClick={() => {toggleSortBottom(true); SortProductPriceMen("reduce")}} >
                                     <span>Giá giảm dần</span>
                                     {
                                         statusSortBottom && <i class="fa-sharp fa-solid fa-check"></i>

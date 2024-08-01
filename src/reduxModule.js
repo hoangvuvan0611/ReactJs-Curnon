@@ -19,7 +19,7 @@ import { initialSizeMen } from "./ReduxData/MenComponent/initialSizeMen";
 import { initialAccessoryComponent } from "./ReduxData/AccessoryComponent/initialAccessoryComponent";
 //filterTypeAccessory
 import { initialTypeProductsAccessory } from "./ReduxData/AccessoryComponent/initialTypeProductsAccessory";
-import { data } from "jquery";
+// import { data } from "jquery";
 //cart
 const initialProductsCart = [];
 //một data trung gian để lưu trữ giá mặc định
@@ -243,7 +243,7 @@ export const Reducer = (state = initial, action) =>{
     //quantitycart
         case "quantitycart":
             let temp = {}
-            if(action.quantity == 0){
+            if(action.quantity === 0){
                 temp = false;
             }
             return{
@@ -257,7 +257,7 @@ export const Reducer = (state = initial, action) =>{
         case "productcart": //addtocart
             let {product} = state; 
             let products = action.item;
-            let prod = product.find(item => item.id == products.id);
+            let prod = product.find(item => item.id === products.id);
             if(prod){
                 prod.quantity++;
             }
@@ -271,14 +271,14 @@ export const Reducer = (state = initial, action) =>{
                 statusContentCart: false,
             }
         case "deletecart":
-            let productdelete = state.product.filter(item => item.id != action.item.id)
+            let productdelete = state.product.filter(item => item.id !== action.item.id)
             return{
                 ...state,
                 product: [...productdelete],
             }
         case "increaseproductcart":
             let cartIncrease = state.product
-            let list = cartIncrease.find(x => x.id == action.item.id);
+            let list = cartIncrease.find(x => x.id === action.item.id);
             list.quantity++;
             return{
                 ...state,
@@ -286,11 +286,11 @@ export const Reducer = (state = initial, action) =>{
             }
         case "reduceproductcart":
             let cartReduce = state.product
-            if(action.item.quantity == 1){
-                cartReduce = cartReduce.filter(x => x.id != action.item.id)
+            if(action.item.quantity === 1){
+                cartReduce = cartReduce.filter(x => x.id !== action.item.id)
             }
             else{
-                let list2 = cartReduce.find(x => x.id == action.item.id);
+                let list2 = cartReduce.find(x => x.id === action.item.id);
                 list2.quantity--;
             }
             return{
@@ -405,7 +405,10 @@ export const Reducer = (state = initial, action) =>{
                 case "melissani":
                 case "moraine":
                 case "santorini":
-                     { prodFilterWomen = TypeProductsWomen.filter(item => item.type == action.item)}
+                    prodFilterWomen = TypeProductsWomen.filter(item => item.type === action.item);
+                    break;
+                default:
+                    break;
             }
 
             countProduct.amount = prodFilterWomen.length;
@@ -417,14 +420,14 @@ export const Reducer = (state = initial, action) =>{
         //typeSize
         case "size":
             let {filterSize} = state;
-            if(action.item == 24){
-                filterSize = state.TypeProductsWomen.filter(item => item.size == action.item)
+            if(action.item === 24){
+                filterSize = state.TypeProductsWomen.filter(item => item.size === action.item)
             } 
-            if(action.item == 28){
-                filterSize = state.TypeProductsWomen.filter(item => item.size == action.item)
+            if(action.item === 28){
+                filterSize = state.TypeProductsWomen.filter(item => item.size === action.item)
             } 
-            if(action.item == 32){
-                filterSize = state.TypeProductsWomen.filter(item => item.size == action.item)
+            if(action.item === 32){
+                filterSize = state.TypeProductsWomen.filter(item => item.size === action.item)
             } 
             state.countProduct.amount = filterSize.length;
             return{
@@ -509,16 +512,15 @@ export const Reducer = (state = initial, action) =>{
             }
         //filterColor
         case "color":
-            console.log(action.status)
             let {filterColor} = state;
-            if(action.status == "silver"){
-                filterColor = state.TypeProductsWomen.filter(item => item.size == action.status)
+            if(action.status === "silver"){
+                filterColor = state.TypeProductsWomen.filter(item => item.size === action.status)
             } 
-            if(action.status == 28){
-                filterColor = state.TypeProductsWomen.filter(item => item.size == action.status)
+            if(action.status === 28){
+                filterColor = state.TypeProductsWomen.filter(item => item.size === action.status)
             } 
-            if(action.status == 32){
-                filterColor = state.TypeProductsWomen.filter(item => item.size == action.status)
+            if(action.status === 32){
+                filterColor = state.TypeProductsWomen.filter(item => item.size === action.status)
             }
             return{
                 ...state,
@@ -534,7 +536,7 @@ export const Reducer = (state = initial, action) =>{
                         for(let i = 0; i < sortWomen.length - 1; i++){
                             for(let j = i + 1; j < sortWomen.length; j++){
                                 if(sortWomen[i].price >  sortWomen[j].price){
-                                    {[sortWomen[i], sortWomen[j]] = [sortWomen[j], sortWomen[i]]} 
+                                    [sortWomen[i], sortWomen[j]] = [sortWomen[j], sortWomen[i]] 
                                 }
                             }
                         }
@@ -546,11 +548,13 @@ export const Reducer = (state = initial, action) =>{
                     for(let i = 0; i < sortWomen.length - 1; i++){
                         for(let j = i + 1; j < sortWomen.length; j++){
                             if(sortWomen[i].price <  sortWomen[j].price){
-                                {[sortWomen[i], sortWomen[j]] = [sortWomen[j], sortWomen[i]]} 
+                                [sortWomen[i], sortWomen[j]] = [sortWomen[j], sortWomen[i]]
                             }
                         }
                         
                     }
+                    break;
+                default: 
                     break;
             }
             return{
@@ -570,7 +574,10 @@ export const Reducer = (state = initial, action) =>{
                 case "dettroit":
                 case "futura":
                 case "whitesands":
-                    { prodFilterMen = TypeProductsMen.filter(item => item.type == action.item)}
+                    prodFilterMen = TypeProductsMen.filter(item => item.type === action.item);
+                    break;
+                default:
+                    break;
             }
             countProductmen.amount = prodFilterMen.length;
             return{
@@ -660,14 +667,14 @@ export const Reducer = (state = initial, action) =>{
         //statusChooseSizeProductsmen
         case "sizemen":
             let {filterSizeMen} = state;
-            if(action.item == 40){
-                filterSizeMen = state.TypeProductsMen.filter(item => item.size == action.item)
+            if(action.item === 40){
+                filterSizeMen = state.TypeProductsMen.filter(item => item.size === action.item)
             } 
-            if(action.item == 42){
-                filterSizeMen = state.TypeProductsMen.filter(item => item.size == action.item)
+            if(action.item === 42){
+                filterSizeMen = state.TypeProductsMen.filter(item => item.size === action.item)
             } 
-            if(action.item == 38){
-                filterSizeMen = state.TypeProductsMen.filter(item => item.size == action.item)
+            if(action.item === 38){
+                filterSizeMen = state.TypeProductsMen.filter(item => item.size === action.item)
             } 
             state.countProductmen.amount = filterSizeMen.length;
             return{
@@ -729,7 +736,7 @@ export const Reducer = (state = initial, action) =>{
                         for(let i = 0; i < sortMen.length - 1; i++){
                             for(let j = i + 1; j < sortMen.length; j++){
                                 if(sortMen[i].price >  sortMen[j].price){
-                                    {[sortMen[i], sortMen[j]] = [sortMen[j], sortMen[i]]} 
+                                    [sortMen[i], sortMen[j]] = [sortMen[j], sortMen[i]]
                                 }
                             }
                         }
@@ -741,11 +748,13 @@ export const Reducer = (state = initial, action) =>{
                     for(let i = 0; i < sortMen.length - 1; i++){
                         for(let j = i + 1; j < sortMen.length; j++){
                             if(sortMen[i].price <  sortMen[j].price){
-                                {[sortMen[i], sortMen[j]] = [sortMen[j], sortMen[i]]} 
+                                [sortMen[i], sortMen[j]] = [sortMen[j], sortMen[i]]
                             }
                         }
                         
                     }
+                    break;
+                default: 
                     break;
             }
             return{
@@ -765,7 +774,10 @@ export const Reducer = (state = initial, action) =>{
                 case "vtnu":
                 case "vt":
                 case "autumn":
-                    { prodFilterAccessory = TypeProductsAccessory.filter(item => item.type == action.item)}
+                    prodFilterAccessory = TypeProductsAccessory.filter(item => item.type === action.item);
+                    break;
+                default:
+                    break;
             }
             countProductAccessory.amount = prodFilterAccessory.length;
             return{
@@ -843,7 +855,10 @@ export const Reducer = (state = initial, action) =>{
                 case "black":
                 case "white":
                 case "grey":
-                    { prodFilterAccessoryColor = state.TypeProductsAccessory.filter(item => item.color == action.item)}
+                    prodFilterAccessoryColor = state.TypeProductsAccessory.filter(item => item.color === action.item)
+                    break;
+                default:
+                    break;
             }
             state.countProductAccessory.amount = prodFilterAccessoryColor.length;
             return{
@@ -912,7 +927,7 @@ export const Reducer = (state = initial, action) =>{
                         for(let i = 0; i < sortAccessory.length - 1; i++){
                             for(let j = i + 1; j < sortAccessory.length; j++){
                                 if(sortAccessory[i].price >  sortAccessory[j].price){
-                                    {[sortAccessory[i], sortAccessory[j]] = [sortAccessory[j], sortAccessory[i]]} 
+                                    [sortAccessory[i], sortAccessory[j]] = [sortAccessory[j], sortAccessory[i]]
                                 }
                             }
                         }
@@ -924,11 +939,13 @@ export const Reducer = (state = initial, action) =>{
                     for(let i = 0; i < sortAccessory.length - 1; i++){
                         for(let j = i + 1; j < sortAccessory.length; j++){
                             if(sortAccessory[i].price <  sortAccessory[j].price){
-                                {[sortAccessory[i], sortAccessory[j]] = [sortAccessory[j], sortAccessory[i]]} 
+                                [sortAccessory[i], sortAccessory[j]] = [sortAccessory[j], sortAccessory[i]]
                             }
                         }
                         
                     }
+                    break;
+                default :
                     break;
             }
             return{
@@ -940,24 +957,24 @@ export const Reducer = (state = initial, action) =>{
         case "toggleResetAccessory":
             state.countProductAccessory.amount = 0;
             return{
-            ...state,
-            productsAccessory: [...state.TypeProductsAccessory],
-            statusVtmen: false,
-            statusPkmen: false,
-            statusPkwomen: false,
-            statusVtwomen: false,
-            statusVt: false,
-            statusAutu: false,
+                ...state,
+                productsAccessory: [...state.TypeProductsAccessory],
+                statusVtmen: false,
+                statusPkmen: false,
+                statusPkwomen: false,
+                statusVtwomen: false,
+                statusVt: false,
+                statusAutu: false,
 
-            statusSilver: false,
-            statusRosegold: false,
-            statusBlack: false,
-            statusWhite: false,
-            statusGrey: false,
+                statusSilver: false,
+                statusRosegold: false,
+                statusBlack: false,
+                statusWhite: false,
+                statusGrey: false,
 
-            statusCheckSortTop: false,
-            statusCheckSortCenter: false,
-            statusCheckSortBottom: false,
+                statusCheckSortTop: false,
+                statusCheckSortCenter: false,
+                statusCheckSortBottom: false,
             }
 
     /*ComponentPay*/
@@ -993,22 +1010,22 @@ export const Reducer = (state = initial, action) =>{
             let statusRegisterPassword = false;
             let statusRegisterName = false;
             let {statusAlbertAccountS} = state;
-            if(action.account == "success"){
+            if(action.account === "success"){
                 statusRegisterNlPassword = false;
                 statusRegisterPassword = false;
                 statusRegisterName = false;
                 statusAlbertAccountS = false;
             }
-            if(action.account == "mknl"){
+            if(action.account === "mknl"){
                 statusRegisterNlPassword = true;
             }
-            if(action.account == "mk"){
+            if(action.account === "mk"){
                 statusRegisterPassword = true;
             }
-            if(action.account == "name"){
+            if(action.account === "name"){
                 statusRegisterName = true;
             }
-            if(action.account == "badrequest"){
+            if(action.account === "badrequest"){
                 statusAlbertAccountS = true;
             }
 
@@ -1034,14 +1051,14 @@ export const Reducer = (state = initial, action) =>{
             let {accountuser} = state;
             let productAcountCart = [];
             let quantityCart = 0;
-            if(action.data == "error"){
+            if(action.data === "error"){
                 statuspassNameLogin = true;
                 statuspasswordLogin = true;
             }
             else{
                 accountuser = action.data;
                 for(let i=0; i<state.dataAccountLogin.length; i++){
-                    if(state.dataAccountLogin[i].account == action.data){
+                    if(state.dataAccountLogin[i].account === action.data){
                         productAcountCart = state.dataAccountLogin[i].prod;
                         quantityCart = state.dataAccountLogin[i].prod.length
                         state.dataAccountPay = state.dataAccountLogin[i].prodPay
@@ -1064,7 +1081,7 @@ export const Reducer = (state = initial, action) =>{
             // let abc = state.dataAccountLogin.filter(item => item.account == state.accountuser);
             // let abc = state.product;
             for(let i=0; i<state.dataAccountLogin.length; i++){
-                if(state.dataAccountLogin[i].account == state.accountuser){
+                if(state.dataAccountLogin[i].account === state.accountuser){
                     state.dataAccountLogin[i].prod = state.product;
                     // console.log(abc)
                 }
