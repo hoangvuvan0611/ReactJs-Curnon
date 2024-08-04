@@ -2,7 +2,7 @@ function StoryCurnon(){
     return(
         <div className="storycurnon container">
             <div className="storycurnon_logo">
-                <img src="https://curnonwatch.com/_next/static/media/logo_small.f2cdcd68.svg" alt="img"/>
+                <img src="https://curnonwatch.com/wp-content/uploads/2023/12/logo.svg" alt="logo"/>
             </div>
             <div className="storycurnon_title">the story of curnon</div>
             <div className="storycurnon_content">

@@ -211,7 +211,6 @@ const initial = {
 
 export const Reducer = (state = initial, action) =>{
     switch (action.type){
-
     //main
         case "toggleScroll":
             return{

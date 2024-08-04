@@ -8,15 +8,15 @@
     }
     position: relative;
     .scrolltop{
-        position: absolute;
+        position: fixed;
         right: 3%;
-        bottom: 1%;
+        bottom: 5%;
         button{
             width: 50px;
             height: 50px;
             border-radius: 50%;
             border: 0;
-            background-color: #161a2168;
+            background-color: #7f8e2768;
             color: #ffffff;
         }
     }
@@ -48,12 +48,13 @@
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid rgb(233, 231, 231);
-    position: relative;
+    // position: relative;
     top: 0px;
 
     .wrapper_left{
         width: 22%;
         justify-content: space-between;
+        position: relative;
         button{
             border: none;
             background-color: #fff;
@@ -88,11 +89,11 @@
         .boxMen_deltail{
             position: absolute;
             width: 100vw;
-            height: 430px;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
             top: 101%;
             left: -150%;
-            display: none;
-            animation: boxMen 0.3s ease-in 1;
             z-index: 1 !important;
             .blackhole{
                 height: 100%;
@@ -255,21 +256,23 @@
             }
         }
         .boxWomen_deltail{
+            cursor: pointer;
             position: absolute;
-            background-color:#fff ;
+            background-color:#fff;
             width: 100vw;
-            height: 430px;
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
             top: 101%;
-            left: -370%;
-            display: none;
-            animation: boxMen 0.3s ease-in 1;
+            left: -100px;
+            animation: boxWomen 0.3s ease-in 1;
             .blackhole{
                 height: 100%;
                 background-color: rgba(0, 0, 0, 0.508);
+                transition: 1s all linear !important;
             }
             .row{
-                background-color: #fff ;
-                height: 430px;
+                height: 0;
+                transition: all 0.5s ease-in-out;
                 .boxWomen_deltail-left{
                     padding-left: 200px;
                     .clock{
@@ -435,7 +438,6 @@
             left: -27%;
             height: 180%;
             display: none;
-            animation: boxMen 0.3s ease-in 1;
             border:  1px solid #d6d6d4;
             div{
                 margin-top: 8px;
@@ -491,9 +493,7 @@
             }
         }
         .btn-Search{
-
             .Search{
-                animation: boxMen 0.3s ease-in 1;
                 position: absolute;
                 background-color: #fff;
                 top: 101%;
@@ -590,20 +590,10 @@
     }
 }
 .boxMen:hover .boxMen_deltail{
-    display: block;
+    height: 430px;
 }
 .blackhole:hover{
     display: none;
-}
-@keyframes boxMen{
-    from{
-        top: 90%; 
-        opacity: 1;
-    } 
-    to{
-        top: 100%;  
-        opacity: 1;
-    }  
 }
 @keyframes menClock{
     from{
@@ -626,9 +616,11 @@
     }  
 }
 
-
-.boxWomen:hover .boxWomen_deltail{
-    display: block;
+.boxWomen:hover + .boxWomen_deltail .row{
+    height: 430px;
+}
+.boxWomen_deltail:hover{
+    height: 430px;
 }
 .accessory:hover p{
     color: #000;
@@ -1500,8 +1492,18 @@
             }
             .contactcurnon_contact_icon{
                 padding-bottom: 14px;
-                .icon{
+                .icon_contact{
                     margin-right: 16px;
+                    font-size: 25px;
+                }
+                .fa-facebook {
+                    color: blue;
+                }
+                .fa-instagram{
+                    color: orangered;
+                }
+                .fa-youtube{
+                    color: red;
                 }
             }
             .contactcurnon_contact_pay{
@@ -1545,6 +1547,9 @@
                 text-transform: uppercase;
                 cursor: pointer;
             }
+            .curnon{
+                color: grey;
+            }
         }
         .contactcurnon_bar-right{
             align-items: center;
@@ -1586,7 +1591,9 @@
 
 // WomenComponent
 .BannerWomen{
-    padding: 110px 30px 30px 30px;
+    padding-top: 80px;
+    margin-bottom: 30px;
+    justify-content: center;
     .img{
         background-image: url("../public/ImageWomen/bannerwomen.jpg");
         background-position: center;
@@ -1971,9 +1978,6 @@
 .color:hover{
     padding-top: 5px !important;
 }
-.icon:hover{
-    padding: 5px 0 0 0 !important;
-}
 .typed:hover{
     padding-top: 1px !important;
 }
@@ -2142,7 +2146,9 @@
 
 //ComponentMen
 .BannerMen{
-    padding: 110px 30px 30px 30px;
+    padding-top: 80px;
+    margin-bottom: 30px;
+    justify-content: center;
     .img{
         background-image: url("../public/ImageMen/bannerMen.jpg");
         background-position: center;
@@ -2157,7 +2163,9 @@
 
 //ComponentAccessory
 .BannerAccessory{
-    padding: 110px 30px 30px 30px;
+    padding-top: 80px;
+    margin-bottom: 30px;
+    justify-content: center;
     .img{
         background-image: url("../public/ImageAccessory/banneraccessory.jpg");
         background-position: center;

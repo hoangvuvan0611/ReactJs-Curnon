@@ -1,4 +1,3 @@
-
 import {connect} from 'react-redux'
 import ListWrapperMen from './ListMen'
 import ListWrapperWomen from './ListWomen'
@@ -63,9 +62,9 @@ function Wrapper(props){
                         className='boxMen' onMouseLeave={() => toggleBackground(false)}>
                     <span onMouseMove={()=>toggleSearch(false)} onMouseEnter={() => toggleMenumen(true)} onMouseMoveCapture={() => toggleAccessory(false)} onMouseOver={() => toggleAlbert(false)}>
                         nam giới
-                        <div className='boxMen_pointer'>
+                        {/* <div className='boxMen_pointer'>
                             <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg' alt='img'/>
-                        </div>
+                        </div> */}
                     </span>
                     <div className='boxMen_deltail'> 
                         <div className='row'>
@@ -128,82 +127,82 @@ function Wrapper(props){
                     </div>
                 </button>
                 <button onMouseMove={() => {toggleCart(false); toggleBackground(true); toggleSp(false); toggleSz(false); toggleCl(false); toggleCld(false); toggleCart(false); toggleSort(false)}} 
-                                            className='boxWomen' 
-                                            onMouseLeave={() => toggleBackground(false)}>
+                            className='boxWomen' 
+                            onMouseLeave={() => toggleBackground(false)}>
                     <span onMouseMove={()=>toggleSearch(false)}>
                         Nữ giới
-                        <div className='boxWomen_pointer'>
+                        {/* <div className='boxWomen_pointer'>
                             <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg' alt='img'/>
-                        </div>
+                        </div> */}
                     </span>
-                    <div className='boxWomen_deltail'>
-                        <div className='row'>
-                            <div className='boxWomen_deltail-left col-4'>
-                                <div className='clock' onMouseMove={() => toggleMenumen(true)} onMouseMoveCapture={() => toggleAccessory(false)} onMouseEnter={() => toggleAlbert(false)}><p>đồng hồ</p></div>
-                                <div className='bestseller'>bán chạy nhất</div>
-                                <div className='accessory' onMouseMove={() => toggleAccessory(true)} onMouseMoveCapture={() => toggleMenumen(false)} onMouseEnter={() => toggleAlbert(false)}><p>Vòng tay</p></div>
-                                <div className='albert' onMouseMove={() => toggleAlbert(true)} onMouseMoveCapture={() =>toggleMenumen(false)} onMouseEnter={() => toggleAccessory(false)}><p>dây đồng hồ</p></div>
-                            </div>
-                            {
-                            statusMenuMen &&  
-                                    <div className='boxWomen_clock-right row col-8'>
-                                        {
-                                            ProductWomen.map(item => <ListWrapperWomen ProductsWapperWomen = {item} key={item.id}/>)
-                                        }
-                                        <div className='moreProducts'>
-                                        <NavLink to="/dong-ho-nu">
-                                            <button onClick={() => toggleBackground(false)}>
-                                                <div>xem tất cả</div>
-                                                <div><i className="fa-sharp fa-solid fa-arrow-right"></i></div>
-                                            </button>
-                                        </NavLink>
-                                        </div>
-                                    </div>
-                            }
-                            {
-                                statusAccessory &&
-                                    <div className='boxWomen_accessory d-flex'>
-                                        <div className='boxWomen_accessory-left'>
-                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2FFemale_Cuffs_6f19de41b6.jpg&w=384&q=75' alt='img'/>
-                                        </div>
-                                        <div className='boxWomen_accessory-right '>
-                                            <div className='content'>
-                                                <p>Mỗi thiết kế vòng tay của Curnon đều thể hiện một cá tính riêng biệt của những cô gái hiện đại</p>
-                                            </div>
-                                            <div className='btn'>
-                                                <button>Mua ngay</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                            }
-                            {
-                                statusAlbert &&
-                                    <div className='boxWomen_albert d-flex'>
-                                        <div className='boxWomen_albert-left'>
-                                            <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2F2_1_85f9086d78.jpg&w=384&q=75' alt='img'/>
-                                        </div>
-                                        <div className='boxWomen_albert-right '>
-                                            <div className='content'>
-                                                <p>Biến một thành nhiều chiếc đồng hồ để thay đổi phong cách thời trang của bản thân với dây đồng hồ Curnon.</p>
-                                            </div>
-                                            <div className='btn'>
-                                                <button>Mua ngay</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                            }
-                        </div>
-                        {/* <div className='blackhole'></div> */}
-                    </div>
                 </button>
+                <div className='boxWomen_deltail'>
+                    <div className='row'>
+                        <div className='boxWomen_deltail-left col-4'>
+                            <div className='clock' onMouseMove={() => toggleMenumen(true)} onMouseMoveCapture={() => toggleAccessory(false)} onMouseEnter={() => toggleAlbert(false)}><p>đồng hồ</p></div>
+                            <div className='bestseller'>bán chạy nhất</div>
+                            <div className='accessory' onMouseMove={() => toggleAccessory(true)} onMouseMoveCapture={() => toggleMenumen(false)} onMouseEnter={() => toggleAlbert(false)}><p>Vòng tay</p></div>
+                            <div className='albert' onMouseMove={() => toggleAlbert(true)} onMouseMoveCapture={() =>toggleMenumen(false)} onMouseEnter={() => toggleAccessory(false)}><p>dây đồng hồ</p></div>
+                        </div>
+                        {
+                        statusMenuMen &&  
+                                <div className='boxWomen_clock-right row col-8'>
+                                    {
+                                        ProductWomen.map(item => <ListWrapperWomen ProductsWapperWomen = {item} key={item.id}/>)
+                                    }
+                                    <div className='moreProducts'>
+                                    <NavLink to="/dong-ho-nu">
+                                        <button onClick={() => toggleBackground(false)}>
+                                            <div>xem tất cả</div>
+                                            <div><i className="fa-sharp fa-solid fa-arrow-right"></i></div>
+                                        </button>
+                                    </NavLink>
+                                    </div>
+                                </div>
+                        }
+                        {
+                            statusAccessory &&
+                                <div className='boxWomen_accessory d-flex'>
+                                    <div className='boxWomen_accessory-left'>
+                                        <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2FFemale_Cuffs_6f19de41b6.jpg&w=384&q=75' alt='img'/>
+                                    </div>
+                                    <div className='boxWomen_accessory-right '>
+                                        <div className='content'>
+                                            <p>Mỗi thiết kế vòng tay của Curnon đều thể hiện một cá tính riêng biệt của những cô gái hiện đại</p>
+                                        </div>
+                                        <div className='btn'>
+                                            <button>Mua ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        }
+                        {
+                            statusAlbert &&
+                                <div className='boxWomen_albert d-flex'>
+                                    <div className='boxWomen_albert-left'>
+                                        <img src='https://curnonwatch.com/_next/image/?url=https%3A%2F%2Fcms.curnonwatch.com%2Fuploads%2F2_1_85f9086d78.jpg&w=384&q=75' alt='img'/>
+                                    </div>
+                                    <div className='boxWomen_albert-right '>
+                                        <div className='content'>
+                                            <p>Biến một thành nhiều chiếc đồng hồ để thay đổi phong cách thời trang của bản thân với dây đồng hồ Curnon.</p>
+                                        </div>
+                                        <div className='btn'>
+                                            <button>Mua ngay</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        }
+                    </div>
+                    {/* <div className='blackhole'></div> */}
+                </div>
                 <button onMouseMove={() => {toggleCart(false); toggleBackground(true); toggleSp(false); toggleSz(false); toggleCl(false); toggleCld(false); toggleCart(false); toggleSort(false)}} 
                         onMouseLeave={() => toggleBackground(false)} 
                         className='boxCurnon'>
                     <span onMouseMove={()=>toggleSearch(false)}>
                         về curnon
-                        <div className='boxCurnon_pointer'>
+                        {/* <div className='boxCurnon_pointer'>
                             <img src='https://curnonwatch.com/_next/static/media/highlight.6a4d6470.svg' alt='img'/>
-                        </div>
+                        </div> */}
                     </span>
                     <div className='boxCurnon_deltail'>
                         <div><p>Blog</p></div>
@@ -214,7 +213,7 @@ function Wrapper(props){
                 </div>
                 <NavLink to="/">
                     <div className='wrapper_logo' onClick={() => toggleBackground(false)}>
-                        <img src='https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg' alt='img'/>
+                        <img src='https://curnonwatch.com/wp-content/uploads/2023/12/logo.svg' alt='img'/>
                     </div>            
                 </NavLink>
                 <div className='wrapper_right d-flex'>
@@ -231,31 +230,31 @@ function Wrapper(props){
                         <i onClick={() => {toggleSearch(true); toggleBackground(true)}}  className='fa-solid fa-magnifying-glass'></i>
                         {
                             statusSearch &&
-                                <div className='Search'>
-                                    <div className='boxSearch'>
-                                        <form>
-                                            <input placeholder='Nhập từ khóa...'/>
-                                        </form>
-                                        <div className='outstanding'>
-                                            <div className='title'>các từ khóa nổi bật</div>
-                                            <div>Kashmir</div>
-                                            <div>colosseum</div>
-                                            <div>florenge</div>
-                                            <div>mykonos</div>
-                                            <div>jackie cuff</div>
-                                        </div>
-                                        <div onClick={() => {toggleSearch(false); toggleBackground(false)}} className='close'>
-                                            đóng
-                                        </div>
+                            <div className='Search'>
+                                <div className='boxSearch'>
+                                    <form>
+                                        <input placeholder='Nhập từ khóa...'/>
+                                    </form>
+                                    <div className='outstanding'>
+                                        <div className='title'>các từ khóa nổi bật</div>
+                                        <div>Kashmir</div>
+                                        <div>colosseum</div>
+                                        <div>florenge</div>
+                                        <div>mykonos</div>
+                                        <div>jackie cuff</div>
+                                    </div>
+                                    <div onClick={() => {toggleSearch(false); toggleBackground(false)}} className='close'>
+                                        đóng
                                     </div>
                                 </div>
+                            </div>
                         }
                     </button>
                     {
                         !statusLogin &&
-                            <div className='lgin_sub'>
-                                <NavLink to="/dang-nhap"><button className='login' >Đăng nhập</button></NavLink> / <NavLink to="/dang-ky"><button className='subc'>Đăng ký</button></NavLink> 
-                            </div>  
+                        <div className='lgin_sub'>
+                            <NavLink to="/dang-nhap"><button className='login' >Đăng nhập</button></NavLink> / <NavLink to="/dang-ky"><button className='subc'>Đăng ký</button></NavLink> 
+                        </div>  
                     }
                     {
                         statusLogin &&
@@ -263,15 +262,15 @@ function Wrapper(props){
                              <i class="fa-sharp fa-solid fa-user" onClick={() => {StatusBoxUser(true); toggleBackground(true)}}></i>
                             {
                                 boxUser &&
-                                    <div className='btn_user_box'>
-                                        <ul>
-                                            <NavLink to="/account-profile">
-                                                <li onClick={() => {StatusBoxUser(false); toggleBackground(false)}}><button>Tài khoản</button></li>
-                                            </NavLink>
-                                            <li onClick={() => {toggleCart(true); StatusBoxUser(false); toggleBackground(false)}}>Đơn mua</li>
-                                            <li onClick={() => {toggleLogOutUser(false); toggleBackground(false); StatusBoxUser(false); quantityCarts(0); PostDataProducts()}}>Đăng xuất</li>
-                                        </ul>
-                                    </div>
+                                <div className='btn_user_box'>
+                                    <ul>
+                                        <NavLink to="/account-profile">
+                                            <li onClick={() => {StatusBoxUser(false); toggleBackground(false)}}><button>Tài khoản</button></li>
+                                        </NavLink>
+                                        <li onClick={() => {toggleCart(true); StatusBoxUser(false); toggleBackground(false)}}>Đơn mua</li>
+                                        <li onClick={() => {toggleLogOutUser(false); toggleBackground(false); StatusBoxUser(false); quantityCarts(0); PostDataProducts()}}>Đăng xuất</li>
+                                    </ul>
+                                </div>
                             }
                         </button>
                     }

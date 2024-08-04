@@ -5,16 +5,16 @@ import {useEffect} from "react"
 function ScrollToTop (props){
 
     let {toggleScroll} = props;
-    // const top = () =>{
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: 'smooth'
-    //     })
-    // }
+    const top = () =>{
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
 
     return(
         <div className="scrolltop">
-            <button>
+            <button onClick={top}>
                 <i className="fa-solid fa-chevron-up"></i>
             </button>
         </div>

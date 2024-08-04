@@ -81,7 +81,7 @@ function ComponentRegister(props){
         <div>
             <div className="logins">
                 <NavLink to="/">
-                    <img src="https://curnonwatch.com/_next/static/media/logo.cc5d661a.svg" alt="logo"/>
+                    <img src="https://curnonwatch.com/wp-content/uploads/2023/12/logo.svg" alt="logo"/>
                 </NavLink>
                 <form className="box" onSubmit={handleSubmit(StatusSubmitAccount)}>
                     <div className="login_box">

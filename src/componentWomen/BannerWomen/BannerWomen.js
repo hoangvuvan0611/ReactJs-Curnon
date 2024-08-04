@@ -2,7 +2,7 @@
 
 function BannerWomen(){
     return(
-        <div className="BannerWomen">
+        <div className="BannerWomen d-flex">
             <div className="img"></div>
         </div>
     )
